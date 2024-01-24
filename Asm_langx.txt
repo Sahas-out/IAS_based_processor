@@ -5,7 +5,7 @@ LOAD$16;
 COMPARE_2$32;         //67
 OR$18;
 NOT$;                 //68    //compare with value of n and store appropriate result in ac 1 if greter 0 if equal to
-JUMP_L+1$73;                //unable to break out of the loop
+JUMP_R+1$72;                //unable to break out of the loop
 LOAD$17;              //69
 DIV$32;                   //loads the value 10 at ac
 STORE$32;             //70
@@ -13,8 +13,7 @@ LOAD_MQ$;                  //n is updated by value at ac
 ADD$33;               //71     
 STORE$33;                 //now sum is added to that remainder value and stored in accumulator
 JUMP_L$65;            //72
-LOAD$32;
-LOAD$33;              //73 
-END$64;                  
+LOAD$33;               
+END$64;               //73   
 
 
