@@ -1,0 +1,20 @@
+LOAD$16;              //65     //   n stored at 32 sum stored at 33 0 stored at 16 10 stored at 17
+COMPARE_1$32;               // from 16 to 32 there are free buffers
+STORE$18;             //66
+LOAD$16;
+COMPARE_2$32;         //67
+OR$18;
+NOT$;                 //68    //compare with value of n and store appropriate result in ac 1 if greter 0 if equal to
+JUMP_L+1$73;                //unable to break out of the loop
+LOAD$17;              //69
+DIV$32;                   //loads the value 10 at ac
+STORE$32;             //70
+LOAD_MQ$;                  //n is updated by value at ac
+ADD$33;               //71     
+STORE$33;                 //now sum is added to that remainder value and stored in accumulator
+JUMP_L$65;            //72
+LOAD$32;
+LOAD$33;              //73 //
+END$64;                  // 
+
+
