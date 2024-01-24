@@ -1,7 +1,5 @@
 import fileinput
 
-
-
 class ALU:
     def __init__(self):
         self.data=bin(0)[2:].rjust(24,'0')
@@ -92,6 +90,7 @@ class ALU:
         Ac=bin(0)[2:].rjust(24,'0')
     
 Alu=ALU()
+
 class IBR:
     def __init__(self):
         self.reg=bin(0)[2:].rjust(7,'0')
@@ -215,8 +214,8 @@ for line in fileinput.input(files="MACHINE_CODE"):
     memory.load_ins(line.rstrip())
 #start of program
 Pc=(bin(1+int(Pc,2))[2:]).rjust(7,'0')
-memory.insert(bin(32)[2:].rjust(7,'0'),bin(16980)[2:].rjust(24,'0'))
-memory.insert(bin(33)[2:].rjust(7,'0'),bin(0)[2:].rjust(24,'0'))
+memory.insert(bin(32)[2:].rjust(7,'0'),bin(12345)[2:].rjust(24,'0')) # n stored here
+memory.insert(bin(33)[2:].rjust(7,'0'),bin(0)[2:].rjust(24,'0')) # sum stored here
 memory.insert(bin(16)[2:].rjust(7,'0'),bin(0)[2:].rjust(24,'0'))
 memory.insert(bin(17)[2:].rjust(7,'0'),bin(10)[2:].rjust(24,'0'))
 while(Pc!=(bin(64)[2:]).rjust(7,'0')):

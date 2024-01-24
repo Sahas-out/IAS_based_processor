@@ -14,7 +14,7 @@ ADD$33;               //71
 STORE$33;                 //now sum is added to that remainder value and stored in accumulator
 JUMP_L$65;            //72
 LOAD$32;
-LOAD$33;              //73 //
-END$64;                  // 
+LOAD$33;              //73 
+END$64;                  
 
 
