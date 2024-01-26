@@ -1,0 +1,13 @@
+LOAD$32;           //65 n is stored  at 32 here 1 is stored at 16 prod is stored at 33
+NOT$;
+JUMP_L+1$70;       //66 if n==1 then it will jump to the end of the program
+LOAD$33;
+MUL$32;            //67
+STORE$33;
+LOAD$32;           //68
+SUB$16;
+STORE$32;          //69
+JUMP_L$66;
+LOAD$33;           //70
+END$64;            
+
