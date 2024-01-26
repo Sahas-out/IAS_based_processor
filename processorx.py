@@ -193,26 +193,18 @@ class Memory:
         self.count+=1
 
 def Fetch():
-    print("In fetch stage")
     global Mar
     global Pc
     Mar=Pc
-    print("Address goes from Pc-> Mar")
     Mbr.reg_modify(memory.value())
-    print("Mar gives memory the address and the corresponding value is trasfered to MBR")
     Mbr.split_instruction()
-    print("The instruction is now being split into IBR and IR and MAR")
 
 def Decode():
-    print("In Decode stage")
     Mbr.flag_modify(Ir)
-    print("now Ir gives control signal to MBR")
     Mbr.reg_modify(memory.value())
-    print("The value stored in Memory is transfered to MBR")
 
 
 def Execute():
-    print("In execute stage")
     Mbr.instruct_ALU()
     Ibr.activate()
     Mbr.analyze()
@@ -235,15 +227,21 @@ for line in fileinput.input(files="MACHINE_CODE"):
         break
     memory.load_ins(line.rstrip())
 
-memory.insert(bin(32)[2:].rjust(7,'0'),bin(999)[2:].rjust(24,'0')) # n stored here
+memory.insert(bin(32)[2:].rjust(7,'0'),bin(69069)[2:].rjust(24,'0')) # n stored here
 memory.insert(bin(33)[2:].rjust(7,'0'),bin(0)[2:].rjust(24,'0')) # sum stored here
 memory.insert(bin(16)[2:].rjust(7,'0'),bin(0)[2:].rjust(24,'0')) # temporary value 0 stored in buffer
 memory.insert(bin(17)[2:].rjust(7,'0'),bin(10)[2:].rjust(24,'0')) # temporary value 10 stored in buffer
 
+# memory.insert(bin(16)[2:].rjust(7,'0'),bin(1)[2:].rjust(24,'0'))
+# memory.insert(bin(32)[2:].rjust(7,'0'),bin(8)[2:].rjust(24,'0'))
+# memory.insert(bin(33)[2:].rjust(7,'0'),bin(1)[2:].rjust(24,'0'))
+
 #start of program
 Pc=(bin(1+int(Pc,2))[2:]).rjust(7,'0')
 while(Pc!=(bin(64)[2:]).rjust(7,'0')):
-    # state 0 : correspond to normal stage # state 1 : correspond to jump_l # state 2 : correspond to jump_r
+    # state 0 : correspond to normal stage
+     # state 1 : correspond to jump_l 
+    # state 2 : correspond to jump_r
     Fetch()
     Decode()
     Execute()
@@ -253,6 +251,7 @@ while(Pc!=(bin(64)[2:]).rjust(7,'0')):
     Execute()
     if(Ibr.state!=bin(0)[2:].rjust(2,'0')):
         continue
+    print(f"After step: {int(Pc,2)} value of n is {(int(memory.memory[32],2))} value of sum is {int(memory.memory[33],2)}")
     Pc=(bin(1+int(Pc,2))[2:]).rjust(7,'0')
 
 # End of PRogram
