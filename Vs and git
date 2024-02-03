@@ -1,0 +1,15 @@
+CTRl +X deletes that line
+CTRL + C +V copies the above line to the nexxt line
+ALT + up or down key to move the line 
+shift +alt + down key to place multi line curosors
+ctrl +d hold to get place all cursors on the words
+hold alt and mouse to place multi cursors
+
+we use git clone (link) to copy the respo into the device
+we need to first to git add. to make all changes final
+then we do git commit -m "message"
+then we use the push command to make the changes finally we can  push it to any branch
+then we use the push command to make the changes finally we can  push it to any branch
+we use the git checkout branch_name to switch to that branch
+to create a new branch we use git checkout -b branch_name 
+use git branch to display all branches
