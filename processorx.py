@@ -227,14 +227,14 @@ for line in fileinput.input(files="MACHINE_CODE"):
         break
     memory.load_ins(line.rstrip())
 
-memory.insert(bin(32)[2:].rjust(7,'0'),bin(69069)[2:].rjust(24,'0')) # n stored here
-memory.insert(bin(33)[2:].rjust(7,'0'),bin(0)[2:].rjust(24,'0')) # sum stored here
-memory.insert(bin(16)[2:].rjust(7,'0'),bin(0)[2:].rjust(24,'0')) # temporary value 0 stored in buffer
-memory.insert(bin(17)[2:].rjust(7,'0'),bin(10)[2:].rjust(24,'0')) # temporary value 10 stored in buffer
+# memory.insert(bin(32)[2:].rjust(7,'0'),bin(69069)[2:].rjust(24,'0')) # n stored here
+# memory.insert(bin(33)[2:].rjust(7,'0'),bin(0)[2:].rjust(24,'0')) # sum stored here
+# memory.insert(bin(16)[2:].rjust(7,'0'),bin(0)[2:].rjust(24,'0')) # temporary value 0 stored in buffer
+# memory.insert(bin(17)[2:].rjust(7,'0'),bin(10)[2:].rjust(24,'0')) # temporary value 10 stored in buffer
 
-# memory.insert(bin(16)[2:].rjust(7,'0'),bin(1)[2:].rjust(24,'0'))
-# memory.insert(bin(32)[2:].rjust(7,'0'),bin(8)[2:].rjust(24,'0'))
-# memory.insert(bin(33)[2:].rjust(7,'0'),bin(1)[2:].rjust(24,'0'))
+memory.insert(bin(16)[2:].rjust(7,'0'),bin(1)[2:].rjust(24,'0'))
+memory.insert(bin(32)[2:].rjust(7,'0'),bin(8)[2:].rjust(24,'0'))
+memory.insert(bin(33)[2:].rjust(7,'0'),bin(1)[2:].rjust(24,'0'))
 
 #start of program
 Pc=(bin(1+int(Pc,2))[2:]).rjust(7,'0')

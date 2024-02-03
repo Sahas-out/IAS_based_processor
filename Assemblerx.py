@@ -11,7 +11,7 @@ map_opcode={
 
 
 file1=open('MACHINE_CODE','w')
-for line in fileinput.input(files="Asm_langx.txt"):
+for line in fileinput.input(files="Asm_langx2.txt"):
     if(line=='\n'):
         break
     opcode,address=(line.split(';')[0]).split("$")
